@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Image - InAmigos Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+      .admin-panel {
+        max-width: 800px;
+        margin: 5rem auto;
+        padding: 2rem;
+        background: var(--white);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .admin-panel h2 {
+        color: var(--primary);
+        margin-bottom: 2rem;
+      }
+      #generated-image {
+        max-width: 100%;
+        border-radius: var(--radius);
+        margin-top: 1rem;
+        display: none;
+      }
+      .loading-spinner {
+        display: none;
+        color: var(--primary);
+        font-weight: 500;
+        margin-top: 1rem;
+      }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">
+                <img src="https://inamigosfoundation.org.in/public/storage/settings/174421468011.jpg" alt="InAmigos Foundation" style="height: 50px;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+      <div class="admin-panel">
+        <h2>Generate High-Quality Images for Website</h2>
+        <form id="image-form">
+          <div class="form-group">
+            <label for="prompt">Image Description</label>
+            <textarea id="prompt" class="form-control" required placeholder="e.g. A serene mountain landscape at golden hour..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="imageSize">Image Size</label>
+            <select id="imageSize" class="form-control" required style="cursor: pointer; height: 50px;">
+              <option value="1K">1K (1024x1024)</option>
+              <option value="2K">2K (2048x2048)</option>
+              <option value="4K">4K (4096x4096)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" id="generate-btn">Generate Image</button>
+          
+          <div class="loading-spinner" id="loading-spinner">
+            <ion-icon name="sync-outline" style="animation: spin 1s linear infinite;"></ion-icon> Generating... This might take up to 20-30 seconds.
+          </div>
+        </form>
+
+        <div style="margin-top: 2rem;">
+          <img id="generated-image" src="" alt="Generated Result">
+          <a id="download-btn" class="btn btn-secondary" style="display: none; margin-top: 1rem;" download="generated_image.png">Download Image</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('image-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const prompt = document.getElementById('prompt').value;
+        const imageSize = document.getElementById('imageSize').value;
+        
+        const btn = document.getElementById('generate-btn');
+        const spinner = document.getElementById('loading-spinner');
+        const img = document.getElementById('generated-image');
+        const downloadBtn = document.getElementById('download-btn');
+
+        btn.disabled = true;
+        spinner.style.display = 'block';
+        img.style.display = 'none';
+        downloadBtn.style.display = 'none';
+
+        try {
+          const res = await fetch('/api/generate-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, imageSize })
+          });
+          const data = await res.json();
+          if (res.ok) {
+            img.src = data.image;
+            img.style.display = 'block';
+            downloadBtn.href = data.image;
+            downloadBtn.style.display = 'inline-flex';
+          } else {
+            alert('Error: ' + data.error);
+          }
+        } catch (err) {
+          alert('Failed to connect to server');
+        } finally {
+          btn.disabled = false;
+          spinner.style.display = 'none';
+        }
+      });
+    </script>
+</body>
+</html>

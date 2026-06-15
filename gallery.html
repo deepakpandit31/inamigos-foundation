@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Inamigos Foundation</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-info">
+                <span><ion-icon name="mail-outline"></ion-icon> <a href="mailto:support@inamigosfoundation.org.in" style="color: inherit; text-decoration: none;">support@inamigosfoundation.org.in</a></span>
+            </div>
+            <div class="top-bar-social">
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="https://inamigosfoundation.org.in/public/storage/settings/174421468011.jpg" alt="Inamigos Foundation" style="height: 60px;">
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                                    <li style="margin-left: 0.5rem;"><a href="donate.html" class="btn btn-primary" style="color: white; padding: 0.5rem 1.5rem; display: inline-block;">Donate Now</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="page-hero" style="background: linear-gradient(rgba(11, 110, 253, 0.8), rgba(11, 110, 253, 0.8)), url('https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&q=80') center/cover;">
+        <div class="container">
+            <h1>Impact Gallery</h1>
+            <p>A visual journey through our global initiatives and the communities we serve.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Area -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- Filter Buttons -->
+            <div class="filter-btns">
+                <button class="filter-btn active" data-filter="all">All Photos</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="volunteers">Volunteers</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-3" id="gallery-grid">
+                
+                <!-- Item 1 (Education) -->
+                <div class="gallery-item" data-category="education">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80" alt="Students in a rural classroom">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Healthcare) -->
+                <div class="gallery-item" data-category="healthcare">
+                    <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80" alt="Mobile medical clinic">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Volunteers) -->
+                <div class="gallery-item" data-category="volunteers">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80" alt="Volunteers engaging with kids">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 4 (Events) -->
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80" alt="Annual fundraising gala">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 5 (Education) -->
+                <div class="gallery-item" data-category="education">
+                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80" alt="Distribution of study materials">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 6 (Healthcare) -->
+                <div class="gallery-item" data-category="healthcare">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80" alt="Doctor consulting patient">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 7 (Volunteers) -->
+                <div class="gallery-item" data-category="volunteers">
+                    <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&q=80" alt="Volunteer planting trees">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 8 (Events) -->
+                <div class="gallery-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80" alt="Community gathering event">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- Item 9 (Education) -->
+                <div class="gallery-item" data-category="education">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80" alt="Digital literacy class">
+                    <div class="gallery-overlay">
+                        <ion-icon name="expand-outline"></ion-icon>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div>
+                    <a href="index.html" class="logo" style="color: white; margin-bottom: 1.5rem;">
+                        <img src="https://inamigosfoundation.org.in/public/storage/settings/174421468011.jpg" alt="Inamigos Foundation" style="height: 60px;">
+                    </a>
+                    <p>Empowering Lives Through Education, Healthcare, and Community Development. Together we can build a world where everyone thrives.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html"><ion-icon name="chevron-forward-outline"></ion-icon> About Us</a></li>
+                        <li><a href="programs.html"><ion-icon name="chevron-forward-outline"></ion-icon> Our Programs</a></li>
+                        <li><a href="volunteer.html"><ion-icon name="chevron-forward-outline"></ion-icon> Volunteer</a></li>
+                        <li><a href="gallery.html"><ion-icon name="chevron-forward-outline"></ion-icon> Gallery</a></li>
+                        <li><a href="blog.html"><ion-icon name="chevron-forward-outline"></ion-icon> News & Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Get Involved</h3>
+                    <ul class="footer-links">
+                        <li><a href="donate.html"><ion-icon name="chevron-forward-outline"></ion-icon> Donate Now</a></li>
+                        <li><a href="contact.html"><ion-icon name="chevron-forward-outline"></ion-icon> Partner With Us</a></li>
+                        <li><a href="contact.html"><ion-icon name="chevron-forward-outline"></ion-icon> Corporate CSR</a></li>
+                        <li><a href="about.html"><ion-icon name="chevron-forward-outline"></ion-icon> Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contact Information</h3>
+                    <ul class="footer-contact">
+                        <li><ion-icon name="location-outline"></ion-icon> 45 Inamigos Tower, Cyber City,<br> Gurugram, Haryana 122002, India</li>
+                        <li><ion-icon name="call-outline"></ion-icon> <a href="tel:+919876543210" style="color: inherit; text-decoration: none;">+91 98765 43210</a></li>
+                        <li><ion-icon name="mail-outline"></ion-icon> <a href="mailto:support@inamigosfoundation.org.in" style="color: inherit; text-decoration: none;">support@inamigosfoundation.org.in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Inamigos Foundation. All Rights Reserved. Designed for humanity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

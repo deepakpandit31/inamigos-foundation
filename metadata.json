@@ -1,0 +1,6 @@
+{
+  "name": "Inamigos Foundation",
+  "description": "Multi-page NGO website empowered with pure HTML, CSS, JS",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

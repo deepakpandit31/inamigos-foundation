@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Donation | Inamigos Foundation</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body style="background: var(--light);">
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="https://inamigosfoundation.org.in/public/storage/settings/174421468011.jpg" alt="Inamigos Foundation" style="height: 60px;">
+                </a>
+                
+                <button class="mobile-menu-btn" aria-label="Toggle Menu" aria-expanded="false">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="donate.html" class="btn btn-primary active" style="color: white; padding: 0.5rem 1.5rem;">Donate Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Donation Hero -->
+    <section class="page-hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80') center/cover;">
+        <div class="container">
+            <h1>Make A Difference Today</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Your generosity transforms lives. 100% of your secure online donation directly supports our field initiatives.</p>
+        </div>
+    </section>
+
+    <!-- Donation Main Area -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2" style="gap: 4rem;">
+                
+                <!-- Info Section -->
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Choose Your Impact</h2>
+                    <p style="margin-bottom: 2rem; font-size: 1.1rem;">Select an amount to see exactly how your contribution serves the community.</p>
+                    
+                    <div class="grid grid-2" style="margin-bottom: 3rem;">
+                        <div class="impact-card active" data-amount="500">
+                            <h3>₹500</h3>
+                            <p style="font-weight: 500; color: var(--dark);">School Supplies</p>
+                            <p style="font-size: 0.85rem; color: var(--text-gray); margin-top: 0.5rem; margin-bottom: 0;">Provides one child with textbooks and stationery for a year.</p>
+                        </div>
+                        <div class="impact-card" data-amount="1000">
+                            <h3>₹1000</h3>
+                            <p style="font-weight: 500; color: var(--dark);">Medical Support</p>
+                            <p style="font-size: 0.85rem; color: var(--text-gray); margin-top: 0.5rem; margin-bottom: 0;">Sponsors basic immunizations and checkups for 5 children.</p>
+                        </div>
+                        <div class="impact-card" style="grid-column: span 2;" data-amount="5000">
+                            <h3>₹5000</h3>
+                            <p style="font-weight: 500; color: var(--dark);">Community Program</p>
+                            <p style="font-size: 0.85rem; color: var(--text-gray); margin-top: 0.5rem; margin-bottom: 0;">Helps fund a bore-well installation providing clean water to an entire village.</p>
+                        </div>
+                    </div>
+
+                    <div style="background: white; padding: 2rem; border-radius: var(--radius); border-left: 4px solid var(--secondary);">
+                        <h4 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;"><ion-icon name="lock-closed" style="color: var(--secondary);"></ion-icon> Secure Payment</h4>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">All transactions are secure and encrypted. Tax exemption certificates under 80G will be mailed to your physical address within 14 days.</p>
+                    </div>
+                </div>
+
+                <!-- Donation Form -->
+                <div>
+                    <div style="background: white; padding: 3rem; border-radius: var(--radius); box-shadow: var(--shadow-hover);">
+                        <h3 style="margin-bottom: 2rem; text-align: center; font-size: 1.8rem; color: var(--dark);">Complete Your Donation</h3>
+                        
+                        <form action="#" method="POST" id="donationForm">
+                            <!-- Amount Option -->
+                            <div class="form-group">
+                                <label for="amount">Donation Amount (₹) <span style="color:red">*</span></label>
+                                <input type="number" id="amount" class="form-control" required value="500" min="100" style="font-size: 1.25rem; font-weight: bold; color: var(--primary);">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="purpose">Donation Purpose</label>
+                                <select id="purpose" class="form-control" style="cursor: pointer;">
+                                    <option value="general">General Fund (Where Needed Most)</option>
+                                    <option value="education">Education Initiatives</option>
+                                    <option value="healthcare">Healthcare & Medicine</option>
+                                    <option value="women">Women Empowerment</option>
+                                </select>
+                            </div>
+                            
+                            <hr style="border: none; border-top: 1px solid var(--border); margin: 2rem 0;">
+
+                            <div class="form-group">
+                                <label for="donorName">Full Name <span style="color:red">*</span></label>
+                                <input type="text" id="donorName" class="form-control" required placeholder="Your full legal name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="donorEmail">Email Address <span style="color:red">*</span></label>
+                                <input type="email" id="donorEmail" class="form-control" required placeholder="Receipts will be sent here">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="donorMessage">Leave a Message (Optional)</label>
+                                <textarea id="donorMessage" class="form-control" placeholder="A word of encouragement..." style="min-height: 80px;"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.2rem; justify-content: center; padding: 1rem;"><ion-icon name="card-outline"></ion-icon> Proceed to Payment</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="padding-top: 3rem;">
+        <div class="container text-center">
+            <p style="color: rgba(255, 255, 255, 0.7);">&copy; 2024 Inamigos Foundation. All Rights Reserved. Reg. Charity No. 12345678</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

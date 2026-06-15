@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inamigos Foundation | Volunteer Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0b6efd 0%, #0044b3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 2rem;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Abstract Background Shapes */
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .shape-1 { width: 500px; height: 500px; top: -100px; left: -150px; }
+        .shape-2 { width: 400px; height: 400px; bottom: -50px; right: -100px; }
+        .shape-3 { width: 200px; height: 200px; top: 40%; right: 15%; background: rgba(255, 255, 255, 0.08); }
+
+        .form-wrapper {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            z-index: 1;
+            position: relative;
+            color: var(--dark);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-header img {
+            height: 70px;
+            margin-bottom: 1rem;
+        }
+
+        .form-header h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .volunteer-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .volunteer-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .volunteer-form input,
+        .volunteer-form select,
+        .volunteer-form textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            background: white;
+        }
+
+        .volunteer-form input:focus,
+        .volunteer-form select:focus,
+        .volunteer-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(11, 110, 253, 0.1);
+        }
+
+        .volunteer-form .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(11, 110, 253, 0.4);
+            background: #0056b3;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            font-weight: 500;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        .back-link ion-icon {
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media(max-width: 768px) {
+            .volunteer-form .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .form-wrapper { padding: 2rem 1.5rem; }
+            .back-link { top: 1rem; left: 1rem; }
+        }
+    </style>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">
+        <ion-icon name="arrow-back-outline"></ion-icon> Return Home
+    </a>
+
+    <!-- Abstract background elements -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+
+    <div class="form-wrapper">
+        <div class="form-header">
+            <img src="https://inamigosfoundation.org.in/public/storage/settings/174421468011.jpg" alt="Inamigos Foundation">
+            <h1>Join Our Mission</h1>
+            <p>Become a volunteer and help us make a lasting impact.</p>
+        </div>
+
+        <form action="#" method="POST" class="volunteer-form" id="regForm">
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" placeholder="Doe" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="john.doe@example.com" required>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City of Residence</label>
+                    <input type="text" id="city" placeholder="New Delhi" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="interest">Area of Interest</label>
+                <select id="interest" required>
+                    <option value="" disabled selected>Select an area...</option>
+                    <option value="education">Education & Teaching</option>
+                    <option value="healthcare">Healthcare & Medical</option>
+                    <option value="environment">Environment & Sustainability</option>
+                    <option value="relief">Relief & Field Work</option>
+                    <option value="remote">Remote (IT, Marketing, Admin)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Why do you want to join us?</label>
+                <textarea id="message" rows="3" placeholder="Share your motivation..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+    </div>
+
+    <script>
+        // Animations
+        gsap.from(".shape-1", { duration: 2, scale: 0, opacity: 0, ease: "back.out(1.5)" });
+        gsap.from(".shape-2", { duration: 2, scale: 0, opacity: 0, ease: "back.out(1.5)", delay: 0.3 });
+        gsap.from(".shape-3", { duration: 2, y: 100, opacity: 0, ease: "power3.out", delay: 0.6 });
+        
+        gsap.from(".form-wrapper", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        gsap.from(".form-header > *", {
+            duration: 0.8,
+            y: 20,
+            opacity: 0,
+            stagger: 0.15,
+            ease: "power2.out",
+            delay: 0.5
+        });
+
+        gsap.from(".form-group", {
+            duration: 0.6,
+            y: 20,
+            opacity: 0,
+            stagger: 0.1,
+            ease: "power2.out",
+            delay: 0.8
+        });
+
+        gsap.from(".submit-btn", {
+            duration: 0.6,
+            scale: 0.9,
+            opacity: 0,
+            ease: "back.out(1.5)",
+            delay: 1.4
+        });
+
+        // Form submission intercept
+        document.getElementById('regForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.querySelector('.submit-btn');
+            btn.innerHTML = 'Submitting...';
+            btn.style.opacity = '0.7';
+            setTimeout(() => {
+                btn.innerHTML = 'Application Sent ❤️';
+                btn.style.background = '#28a745';
+                btn.style.opacity = '1';
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
